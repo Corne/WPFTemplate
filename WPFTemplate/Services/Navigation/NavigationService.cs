@@ -58,7 +58,9 @@ namespace WPFTemplate.Services.Navigation
             if (CanGoBack())
             {
                 Pop();
-                await main.Update(viewmodels.Peek().Content);
+                var content = viewmodels.Peek().Content;
+                log.Info($"Navigating back to {content.GetType().Name}");
+                await main.Update(content);
             }
         }
 
@@ -70,7 +72,9 @@ namespace WPFTemplate.Services.Navigation
             }
             if (viewmodels.Count > 0)
             {
-                await main.Update(viewmodels.Peek().Content);
+                var content = viewmodels.Peek().Content;
+                log.Info($"Navigating home to {content.GetType().Name}");
+                await main.Update(content);
             }
         }
 
