@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vw="clr-namespace:WPFTemplate.Views"
+                    xmlns:homevm="clr-namespace:WPFTemplate.ViewModels"
+                    xmlns:examplevw="clr-namespace:WPFTemplate.Views.Example"
+                    xmlns:examplevm="clr-namespace:WPFTemplate.ViewModels.Example">
+
+    <DataTemplate DataType="{x:Type homevm:HomeViewModel}">
+        <vw:HomeView />
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type examplevm:LoadingExampleViewModel}">
+        <examplevw:LoadingExampleView />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type examplevm:ParameterViewModel}">
+        <examplevw:ParameterExample />
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type examplevm:KeyedViewModel}">
+        <examplevw:KeyedExample />
+    </DataTemplate>
+</ResourceDictionary>

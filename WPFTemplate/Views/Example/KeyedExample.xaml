@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WPFTemplate.Views.Example.KeyedExample"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFTemplate.Views.Example"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Border Padding="50">
+            
+            <TextBlock Style="{StaticResource ExampleText}">
+                Sometimes you have multiple implementations for 1 model-interface.
+                Which can mean you have 1 view and 1 viewmodel, for multiple model implementations of an interface.
+                To resolve this, the KeyedViewModel is registered multiple times on the Autofac container (see ApplicationBuilder), with different keys.
+                So on navigation we can resolve the different implementations based on the registered key.
+            </TextBlock>
+
+        </Border>
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock Margin="10, 0" Text="{Binding Value}" FontSize="{DynamicResource NormalFontSize}" FontFamily="{DynamicResource ContentFontFamily}" />
+            <Button Style="{DynamicResource AccentedSquareButtonStyle}" Padding="10, 5"  Content="Update" Command="{Binding Update}" />
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTemplate", "WPFTemplate\WPFTemplate.csproj", "{961E529A-DFD1-418F-8720-C17E975055B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTemplate.Test", "WPFTemplate.Test\WPFTemplate.Test.csproj", "{CC430EA6-68B0-4529-B24B-C7E61DC2F9B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{961E529A-DFD1-418F-8720-C17E975055B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{961E529A-DFD1-418F-8720-C17E975055B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{961E529A-DFD1-418F-8720-C17E975055B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{961E529A-DFD1-418F-8720-C17E975055B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC430EA6-68B0-4529-B24B-C7E61DC2F9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC430EA6-68B0-4529-B24B-C7E61DC2F9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC430EA6-68B0-4529-B24B-C7E61DC2F9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC430EA6-68B0-4529-B24B-C7E61DC2F9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

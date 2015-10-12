@@ -1,0 +1,42 @@
+﻿<Mahapps:MetroWindow x:Class="WPFTemplate.MainWindow"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:Mahapps="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                     xmlns:Controls="clr-namespace:WPFTemplate.Controls"
+                     xmlns:ViewModels="clr-namespace:WPFTemplate.ViewModels"
+                     xmlns:Converters="clr-namespace:WPFTemplate.Converters"
+                     Title="MainWindow" 
+                     Height="800" 
+                     Width="1200"
+                     WindowButtonCommandsOverlayBehavior="Never"
+                     IconOverlayBehavior="Never"
+                     RightWindowCommandsOverlayBehavior="Never"
+                     DataContext="{Binding MainViewModel, Source={StaticResource Locator}}">
+
+    <Mahapps:MetroWindow.Flyouts>
+        <Mahapps:FlyoutsControl>
+            <Mahapps:Flyout DataContext="{Binding Settings}" Header="Flyout" Theme="Adapt" IsOpen="{Binding ShowSettings}" Position="Right" Width="200">
+                <ContentPresenter Content="{Binding Content}" DataContext="{Binding .}" />
+            </Mahapps:Flyout>
+            <Controls:LoadingFlyout DataContext="{Binding Content.LoadMessage}" IsOpen="{Binding IsLoading}" Style="{StaticResource LeftLoadingFlyoutStyle}">
+                <Controls:LoadingPanel MinWidth="350" IsLoading="True" Message="{Binding MainMessage}" SubMessage="{Binding SubMessage}" />
+            </Controls:LoadingFlyout>
+        </Mahapps:FlyoutsControl>
+    </Mahapps:MetroWindow.Flyouts>
+
+    <Mahapps:MetroWindow.RightWindowCommands>
+        <Mahapps:WindowCommands>
+            <Controls:IconButton Command="{Binding Settings.OpenThemeSettings}" Icon="{StaticResource appbar_draw_brush}" Text="Theme" />
+        </Mahapps:WindowCommands>
+    </Mahapps:MetroWindow.RightWindowCommands>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <ContentPresenter Content="{Binding Content.Header}" />
+        <Mahapps:TransitioningContentControl Grid.Row="1" Transition="Left" Content="{Binding Content}" />
+    </Grid>
+</Mahapps:MetroWindow>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="WPFTemplate.Views.Example.ParameterExample"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPFTemplate.Views.Example"
+             xmlns:controls="clr-namespace:WPFTemplate.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Border Padding="50">
+            <TextBlock Style="{StaticResource ExampleText}">
+                In many applications you need to show a view based on a selected item.
+                To pass the the data from the selected item, we make sure this data gets injected in the constructor, during navigaton.
+                Autofac support 3 parameter options 'NamedParameter' to inject a parameter by name, 
+                'TypedParameter' to inject a parameter based on the type and 'ResolvedParameter' to dynamicly resolve parameters from the Container.
+            </TextBlock>
+        </Border>
+
+        <TextBlock FontSize="{DynamicResource SubHeaderFontSize}" 
+                   Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   Text="{Binding Parameter, StringFormat={}Selected parameter: {0}}" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:WPFTemplate.ViewModels.Navigation"
+                    xmlns:controls="clr-namespace:WPFTemplate.Controls"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+    <System:Double x:Key="HeaderHeight">100</System:Double>
+    <GridLength x:Key="HeaderGridLength">100</GridLength>
+
+
+    <DataTemplate DataType="{x:Type vm:HeaderViewModel}">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="{StaticResource HeaderHeight}">
+            <controls:NavigationButton  Command="{Binding GoBack}" Direction="Back" Margin="10, 0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding Title}" FontSize="{DynamicResource HeaderFontSize}" FontFamily="{DynamicResource HeaderFontFamily}" VerticalAlignment="Center"  />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:EmptyHeaderViewModel}" />
+
+
+
+</ResourceDictionary>
