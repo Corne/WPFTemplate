@@ -15,7 +15,7 @@
 
     <Mahapps:MetroWindow.Flyouts>
         <Mahapps:FlyoutsControl>
-            <Mahapps:Flyout DataContext="{Binding Settings}" Header="Flyout" Theme="Adapt" IsOpen="{Binding ShowSettings}" Position="Right" Width="200">
+            <Mahapps:Flyout DataContext="{Binding Settings}" Header="{Binding Content.Title}" Theme="Adapt" IsOpen="{Binding ShowSettings}" Position="Right" Width="200">
                 <ContentPresenter Content="{Binding Content}" DataContext="{Binding .}" />
             </Mahapps:Flyout>
             <Controls:LoadingFlyout DataContext="{Binding Content.LoadMessage}" IsOpen="{Binding IsLoading}" Style="{StaticResource LeftLoadingFlyoutStyle}">

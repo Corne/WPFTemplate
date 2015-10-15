@@ -8,7 +8,7 @@ using WPFTemplate.Services.Themes;
 
 namespace WPFTemplate.ViewModels.Settings
 {
-    public class ThemeViewModel : ViewModelBase
+    public class ThemeViewModel : ViewModelBase, ISettingEditor
     {
 
         private readonly IThemeController controller;
@@ -23,6 +23,8 @@ namespace WPFTemplate.ViewModels.Settings
             CurrentTheme = Themes.Single(t => t.Name == controller.CurrentTheme.Name);
             CurrentAccent = Accents.Single(a => a.Name == controller.CurrentAccent.Name);
         }
+
+        public string Title { get { return "Theme"; } }
 
         public IEnumerable<ThemeColor> Themes { get; }
         public IEnumerable<AccentColor> Accents { get; }

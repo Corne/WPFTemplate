@@ -18,8 +18,8 @@ namespace WPFTemplate.ViewModels.Settings
             this.themeViewModel = themeViewModel;
         }
 
-        private object _content;
-        public object Content
+        private ISettingEditor _content;
+        public ISettingEditor Content
         {
             get { return _content; }
             set { Set(ref _content, value); }
