@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
@@ -25,6 +26,11 @@ namespace WPFTemplate
         {
             builder = new ContainerBuilder();
 
+            var assembly = Assembly.GetExecutingAssembly();
+            builder.RegisterAssemblyTypes(assembly)
+                .Where(t => t.Name.EndsWith("ViewModel"))
+                .AsSelf();
+
             //navigation
             builder.RegisterType<NavigationService>().As<INavigationService>().SingleInstance();
             builder.RegisterType<ContentScope>();
@@ -37,11 +43,6 @@ namespace WPFTemplate
                 .Keyed<KeyedViewModel>(UpdateType.Decrement);
 
             builder.RegisterType<HeaderViewModel>().AsSelf().AsImplementedInterfaces();
-            builder.RegisterType<HomeViewModel>();
-            builder.RegisterType<SettingsViewModel>();
-            builder.RegisterType<ThemeViewModel>();
-            builder.RegisterType<LoadingExampleViewModel>();
-            builder.RegisterType<ParameterViewModel>();
 
             var controller = new ThemeController();
             controller.Initialize();
